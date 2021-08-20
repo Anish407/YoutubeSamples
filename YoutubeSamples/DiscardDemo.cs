@@ -14,7 +14,6 @@ namespace YoutubeSamples
         void sample()
         {
             (_,_,int age)= Sum2();
-            
         }
     }
 }

@@ -7,10 +7,12 @@
 
   <ItemGroup>
     <Compile Remove="Program.cs" />
+    <Compile Remove="WhenAllExceptionProgram.cs" />
   </ItemGroup>
 
   <ItemGroup>
     <None Include="Program.cs" />
+    <None Include="WhenAllExceptionProgram.cs" />
   </ItemGroup>
 
   <ItemGroup>
