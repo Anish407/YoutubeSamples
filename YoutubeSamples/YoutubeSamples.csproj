@@ -6,11 +6,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="ContinueWithWhenAllProgram.cs" />
     <Compile Remove="Program.cs" />
     <Compile Remove="WhenAllExceptionProgram.cs" />
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="ContinueWithWhenAllProgram.cs" />
     <None Include="Program.cs" />
     <None Include="WhenAllExceptionProgram.cs" />
   </ItemGroup>
