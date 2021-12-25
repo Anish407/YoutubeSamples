@@ -11,6 +11,7 @@ namespace YoutubeSamples
             var allTasks = Task.WhenAll(args);
             try
             {
+                // Dont handle the exceptions inside the catch block.. Let all the tasks complete then check the exception property
                return await allTasks;
             }
             catch (AggregateException ax)

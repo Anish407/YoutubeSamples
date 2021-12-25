@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31410.414
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YoutubeSamples", "YoutubeSamples\YoutubeSamples.csproj", "{00B15C8B-4626-4564-AF21-56EA07210189}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YoutubeSamples", "YoutubeSamples\YoutubeSamples.csproj", "{00B15C8B-4626-4564-AF21-56EA07210189}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample.Api", "Sample.Api\Sample.Api.csproj", "{8127FA6C-BAA8-4836-8ADF-CF302CEC2F7C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sample.Api", "Sample.Api\Sample.Api.csproj", "{8127FA6C-BAA8-4836-8ADF-CF302CEC2F7C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Youtube.Samples", "Youtube.Samples\Youtube.Samples.csproj", "{E336FB37-7041-4E79-A8FA-8F23B02FC9EF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{8127FA6C-BAA8-4836-8ADF-CF302CEC2F7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8127FA6C-BAA8-4836-8ADF-CF302CEC2F7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8127FA6C-BAA8-4836-8ADF-CF302CEC2F7C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E336FB37-7041-4E79-A8FA-8F23B02FC9EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E336FB37-7041-4E79-A8FA-8F23B02FC9EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E336FB37-7041-4E79-A8FA-8F23B02FC9EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E336FB37-7041-4E79-A8FA-8F23B02FC9EF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

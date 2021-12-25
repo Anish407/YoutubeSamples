@@ -28,13 +28,17 @@ namespace YoutubeSamples
             for (int i = 0; i < tasks.Count; i++)
                 alltasks.Add(tasks[i].DummyTask(i));
 
+            //Scenario 2 when using Task.WhenAll
+            //var res =  Task.WhenAll(alltasks.ToArray());
             try
             {
-              
+                //Scenario 1 when using TaskExtensions.WhenAllExtension
                 //use this to find all the exceptions when working with WhenAll
                 var res = await TaskExtensions.WhenAllExtension(alltasks.ToArray());
+
+                //Scenario 2
                 //Task.When All will return just one exception and 
-                //var res = await Task.WhenAll(alltasks.ToArray());
+                // await res;
             }
             catch (AggregateException ax)
             {
@@ -42,9 +46,13 @@ namespace YoutubeSamples
             }
             catch (Exception ax)
             {
-                Console.WriteLine(ax.Message);
+                // dont catch the exception when using when all.. finally when the task completes
+                // use the Exception property to get all the exceptions. Eg: ln 50  var exceptions = res.Exception;
+                //Console.WriteLine(ax.Message);
             }
 
+            var exceptions = res.Exception;
+            Console.Read();
             void sample(Func<int> myFunc)
             {
                 try

@@ -1,4 +1,7 @@
-﻿namespace YoutubeSamples.Enumerable_Extensions
+﻿using System;
+using System.Collections.Generic;
+
+namespace YoutubeSamples.Enumerable_Extensions
 {
     public static class EnumerableExtensions
     {

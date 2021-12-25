@@ -8,7 +8,6 @@ namespace Sample.Api.Controllers
     [ApiController]
     public class AsyncDemoController : ControllerBase
     {
-
         [HttpGet("GetLikes")]
         public async Task<IActionResult> GetLikes()
         {

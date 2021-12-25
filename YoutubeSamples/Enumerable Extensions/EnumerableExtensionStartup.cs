@@ -1,4 +1,7 @@
-﻿using System.Diagnostics.CodeAnalysis;
+﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
+using System.Linq;
 using YoutubeSamples.Enumerable_Extensions;
 
 
@@ -20,9 +23,9 @@ var z3= actual.Add(obj2);
 
 
 
-var result= source.DisticntBy(i=> i.Id).ToList();
-var result2= source.DisticntBy(i=> new { i.Id, i.Name }).ToList();
-var result3= source.DisticntBy(i=> new { i.Id, i.Address }).ToList();
+var result= source.DistinctBy(i=> i.Id).ToList();
+var result2= source.DistinctBy(i=> new { i.Id, i.Name }).ToList();
+var result3= source.DistinctBy(i=> new { i.Id, i.Address }).ToList();
 Console.Read();
 
 public class MyComparer : IEqualityComparer<MyClass>
