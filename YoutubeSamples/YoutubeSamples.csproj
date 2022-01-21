@@ -8,6 +8,7 @@
   <ItemGroup>
     <Compile Remove="ContinueWithWhenAllProgram.cs" />
     <Compile Remove="Enumerable Extensions\EnumerableExtensionStartup.cs" />
+    <Compile Remove="LogExecutionTime\LogExecutionProgram.cs" />
     <Compile Remove="Program.cs" />
     <Compile Remove="WhenAllExceptionProgram.cs" />
   </ItemGroup>
@@ -15,6 +16,7 @@
   <ItemGroup>
     <None Include="ContinueWithWhenAllProgram.cs" />
     <None Include="Enumerable Extensions\EnumerableExtensionStartup.cs" />
+    <None Include="LogExecutionTime\LogExecutionProgram.cs" />
     <None Include="Program.cs" />
     <None Include="WhenAllExceptionProgram.cs" />
   </ItemGroup>
