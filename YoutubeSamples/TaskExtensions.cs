@@ -21,11 +21,12 @@ namespace YoutubeSamples
             }
             catch (Exception ex)
             {
-                // Ignore the exceptions thrown by WhenAll and let it complete.
+                 // Ignore the exceptions thrown by WhenAll and let it complete.
                 // We can get all the exceptions as an aggregate (in the Exception property).
             }
             
-            throw allTasks.Exception ?? new Exception("This will not get called");
+            //if the call reaches this line means that an exception was thrown and the exception property will not be null.
+            throw allTasks.Exception ?? new Exception("This will not get called"); // just to return something.
         }
     }
 }

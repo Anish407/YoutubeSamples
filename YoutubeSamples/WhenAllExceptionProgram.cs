@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace YoutubeSamples
@@ -27,18 +28,15 @@ namespace YoutubeSamples
             List<Task<string>> alltasks = new List<Task<string>>();
             for (int i = 0; i < tasks.Count; i++)
                 alltasks.Add(tasks[i].DummyTask(i));
+            IEnumerable<string> arr = new List<string>();
 
-            //Scenario 2 when using Task.WhenAll
-            //var res =  Task.WhenAll(alltasks.ToArray());
+
+            #region Scenario 1 when using TaskExtensions.WhenAllExtension
             try
             {
-                //Scenario 1 when using TaskExtensions.WhenAllExtension
-                //use this to find all the exceptions when working with WhenAll
-                var res = await TaskExtensions.WhenAllExtension(alltasks.ToArray());
 
-                //Scenario 2
-                //Task.When All will return just one exception and 
-                // await res;
+                //use this to find all the exceptions when working with WhenAll
+                arr = await TaskExtensions.WhenAllExtension(alltasks.ToArray());
             }
             catch (AggregateException ax)
             {
@@ -50,9 +48,59 @@ namespace YoutubeSamples
                 // use the Exception property to get all the exceptions. Eg: ln 50  var exceptions = res.Exception;
                 //Console.WriteLine(ax.Message);
             }
+            #endregion
+
+            //var exception = res.Exception;
+
+            #region Scenario 2 HANDLING EXCEPTIONS USING  Task.WhenAll
+            var res = Task.WhenAll(alltasks.ToArray());
+
+            try
+            {
+                arr = await res;
+            }
+            catch (AggregateException ex)
+            {
+                Console.WriteLine(ex.Flatten().Message);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
 
             var exceptions = res.Exception;
+            Console.WriteLine(res.Exception.Message);
+            #endregion
+
+            //Scenario 3
+            #region Handle And get the ones that worked and failed 
+            IList<Task<(string, Exception)>> operations = new List<Task<(string, Exception)>>();
+
+            for (int i = 0; i < tasks.Count; i++)
+                operations.Add(WhenAllHelper(tasks[i].DummyTask(i)));
+
+            await Task.WhenAll(operations);
+
+            var failedOnes = operations.Where(i => i.Result.Item2 != null).ToList();
+            var passedOnes = operations.Where(i => i.Result.Item1 != null).ToList();
+
+            failedOnes.ForEach(async i => Console.WriteLine($"Failed : {await i}" ));
+            passedOnes.ForEach(async i => Console.WriteLine($"Passed : {await i}"));
+            #endregion
             Console.Read();
+
+            async Task<(T, Exception)> WhenAllHelper<T>(Task<T> operation)
+            {
+                try
+                {
+                    return (await operation, null);
+                }
+                catch (Exception ex)
+                {
+                    return (default(T), ex);
+                }
+            }
+
             void sample(Func<int> myFunc)
             {
                 try
@@ -61,7 +109,6 @@ namespace YoutubeSamples
                 }
                 catch (Exception)
                 {
-
                     throw;
                 }
 
@@ -70,7 +117,10 @@ namespace YoutubeSamples
 
             Console.ReadLine();
         }
-        static (int, string, int) Sum() => (100, "anish", 200);
+        static (int, string, int) Sum() 
+        { 
+            return (100, "anish", 200); 
+        }
 
 
     }
