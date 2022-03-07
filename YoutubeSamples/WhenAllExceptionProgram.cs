@@ -86,8 +86,6 @@ namespace YoutubeSamples
 
             failedOnes.ForEach(async i => Console.WriteLine($"Failed : {await i}" ));
             passedOnes.ForEach(async i => Console.WriteLine($"Passed : {await i}"));
-            #endregion
-            Console.Read();
 
             async Task<(T, Exception)> WhenAllHelper<T>(Task<T> operation)
             {
@@ -100,6 +98,32 @@ namespace YoutubeSamples
                     return (default(T), ex);
                 }
             }
+            #endregion
+            Console.Read();
+
+            #region WhenAllReturns exception string
+            IList<Task<(string result, string exceptionMessage)>> allTasksWithExString = new List<Task<(string, string)>>();
+
+            for (int i = 0; i < tasks.Count; i++)
+                allTasksWithExString.Add(WhenAllReturnResponseOrErrorString(tasks[i].DummyTask(0)));
+
+            await Task.WhenAll(allTasksWithExString);
+
+            var tasksWithoutEx = allTasksWithExString.Where(i => i.Result.result != null);
+            var tasksWitEx = allTasksWithExString.Where(i => i.Result.exceptionMessage != null);
+
+            async Task<(T, string)> WhenAllReturnResponseOrErrorString<T>(Task<T> operation) where T : class
+            {
+                try
+                {
+                    return (await operation, null);
+                }
+                catch (Exception ex)
+                {
+                    return (null, ex.Message);
+                }
+            } 
+            #endregion
 
             void sample(Func<int> myFunc)
             {
