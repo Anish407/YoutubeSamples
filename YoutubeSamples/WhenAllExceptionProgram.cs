@@ -146,7 +146,15 @@ namespace YoutubeSamples
             return (100, "anish", 200); 
         }
 
+        public interface IDemo
+        {
+            public string Hello { get; set; }
 
+            private void show()
+            {
+               
+            }
+        }
     }
 }
 
