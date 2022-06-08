@@ -11,6 +11,8 @@
     <Compile Remove="LogExecutionTime\LogExecutionProgram.cs" />
     <Compile Remove="OtherExtensions\OtherExtensionsProgram.cs" />
     <Compile Remove="Program.cs" />
+    <Compile Remove="RefreshDelegates.cs" />
+    <Compile Remove="WhenAllExceptionProgram.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -19,6 +21,8 @@
     <None Include="LogExecutionTime\LogExecutionProgram.cs" />
     <None Include="OtherExtensions\OtherExtensionsProgram.cs" />
     <None Include="Program.cs" />
+    <None Include="RefreshDelegates.cs" />
+    <None Include="WhenAllExceptionProgram.cs" />
   </ItemGroup>
 
   <ItemGroup>
