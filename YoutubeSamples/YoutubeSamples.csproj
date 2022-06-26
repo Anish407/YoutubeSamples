@@ -10,8 +10,10 @@
     <Compile Remove="Enumerable Extensions\EnumerableExtensionStartup.cs" />
     <Compile Remove="LogExecutionTime\LogExecutionProgram.cs" />
     <Compile Remove="OtherExtensions\OtherExtensionsProgram.cs" />
+    <Compile Remove="ParallelinCSharp.cs" />
     <Compile Remove="Program.cs" />
     <Compile Remove="RefreshDelegates.cs" />
+    <Compile Remove="Tuples\TuplesProgram.cs" />
     <Compile Remove="WhenAllExceptionProgram.cs" />
   </ItemGroup>
 
@@ -20,8 +22,10 @@
     <None Include="Enumerable Extensions\EnumerableExtensionStartup.cs" />
     <None Include="LogExecutionTime\LogExecutionProgram.cs" />
     <None Include="OtherExtensions\OtherExtensionsProgram.cs" />
+    <None Include="ParallelinCSharp.cs" />
     <None Include="Program.cs" />
     <None Include="RefreshDelegates.cs" />
+    <None Include="Tuples\TuplesProgram.cs" />
     <None Include="WhenAllExceptionProgram.cs" />
   </ItemGroup>
 

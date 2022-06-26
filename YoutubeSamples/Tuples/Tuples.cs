@@ -37,7 +37,7 @@ namespace YoutubeSamples.Tuples
             Console.WriteLine(city);
 
             // names will still be discarded
-            string jsonData = JsonSerializer.Serialize(data, options: new() { IncludeFields = true });
+  
             
         }
     }
