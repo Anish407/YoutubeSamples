@@ -9,10 +9,10 @@
     <Compile Remove="ContinueWithWhenAllProgram.cs" />
     <Compile Remove="Enumerable Extensions\EnumerableExtensionStartup.cs" />
     <Compile Remove="LogExecutionTime\LogExecutionProgram.cs" />
-    <Compile Remove="OtherExtensions\OtherExtensionsProgram.cs" />
     <Compile Remove="ParallelinCSharp.cs" />
     <Compile Remove="Program.cs" />
     <Compile Remove="RefreshDelegates.cs" />
+    <Compile Remove="Timers In .Net 6\TimerProgram.cs" />
     <Compile Remove="Tuples\TuplesProgram.cs" />
     <Compile Remove="WhenAllExceptionProgram.cs" />
   </ItemGroup>
@@ -21,10 +21,10 @@
     <None Include="ContinueWithWhenAllProgram.cs" />
     <None Include="Enumerable Extensions\EnumerableExtensionStartup.cs" />
     <None Include="LogExecutionTime\LogExecutionProgram.cs" />
-    <None Include="OtherExtensions\OtherExtensionsProgram.cs" />
     <None Include="ParallelinCSharp.cs" />
     <None Include="Program.cs" />
     <None Include="RefreshDelegates.cs" />
+    <None Include="Timers In .Net 6\TimerProgram.cs" />
     <None Include="Tuples\TuplesProgram.cs" />
     <None Include="WhenAllExceptionProgram.cs" />
   </ItemGroup>
